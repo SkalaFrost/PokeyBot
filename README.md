@@ -1,14 +1,7 @@
-[![Static Badge](https://img.shields.io/badge/Telegram-Channel-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/hidden_coding)
-
-[![Static Badge](https://img.shields.io/badge/Telegram-Chat-yes?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/hidden_codding_chat)
-
-[![Static Badge](https://img.shields.io/badge/Telegram-Bot%20Link-Link?style=for-the-badge&logo=Telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/BlumCryptoBot/app?startapp=ref_QwD3tLsY8f)
 
 ## Recommendation before use
 
 # 🔥🔥 PYTHON version must be 3.10 🔥🔥
-
-> 🇷 🇺 README in russian available [here](README-RU.md)
 
 ## Features  
 |                      Feature                       | Supported |
@@ -16,16 +9,16 @@
 |                   Multithreading                   |     ✅     |
 |              Proxy binding to session              |     ✅     |
 | Auto-register your account with your referral link |     ✅     |
-|      Auto-game with a choice of random points      |     ✅     |
+|          Auto tap, upgrade and more                |     ✅     |
 |           Support for pyrogram .session            |     ✅     |
 
 
-## [Settings](https://github.com/HiddenCodeDevs/BlumTelegramBot/blob/main/.env-example/)
+
 |        Settings         |                                 Description                                  |
 |:-----------------------:|:----------------------------------------------------------------------------:|
 |  **API_ID / API_HASH**  |   Platform data from which to run the Telegram session (default - android)   |
-|     **PLAY_GAMES**      |              Play games or just start farming (default is True)              |
-|       **POINTS**        |        Points per game (default is [190, 230] ((That is, 190 to 230)         |
+|     **AUTO_UPGRAGE**      |              Auto upgrade card (True/False)             |
+|      **AUTO_TASK**        |                   Auto do task (True/False)            |
 |       **USE_REF**       |         Register accounts with ur referral or not (default - False)          |
 |       **REF_ID**        |   Your referral argument (comes after app/startapp? in your referral link)   |
 | **USE_PROXY_FROM_FILE** | Whether to use a proxy from the `bot/config/proxies.txt` file (True / False) |
@@ -44,10 +37,10 @@ Before you begin, make sure you have the following installed:
 3. Record the API_ID and API_HASH provided after registering your application in the .env file.
 
 ## Installation
-You can download the [**repository**](https://github.com/HiddenCodeDevs/BlumTelegramBot) by cloning it to your system and installing the necessary dependencies:
+You can download the [**repository**](https://github.com/SkalaFrost/PokeyBot) by cloning it to your system and installing the necessary dependencies:
 ```shell
-git clone https://github.com/HiddenCodeDevs/BlumTelegramBot.git
-cd BlumTelegramBot
+git clone https://github.com/SkalaFrost/PokeyBot.git
+cd PokeyBot
 ```
 
 Then you can do automatic installation by typing:
@@ -75,9 +68,9 @@ python3 main.py
 
 You can also use arguments for quick start, for example:
 ```shell
-~/BlumTelegramBot >>> python3 main.py --action (1/2)
+~/PokeyBot >>> python3 main.py --action (1/2)
 # Or
-~/BlumTelegramBot >>> python3 main.py -a (1/2)
+~/PokeyBot >>> python3 main.py -a (1/2)
 
 # 1 - Run clicker
 # 2 - Creates a session
@@ -95,9 +88,9 @@ python main.py
 
 You can also use arguments for quick start, for example:
 ```shell
-~/BlumTelegramBot >>> python main.py --action (1/2)
+~/PokeyBot >>> python main.py --action (1/2)
 # Or
-~/BlumTelegramBot >>> python main.py -a (1/2)
+~/PokeyBot >>> python main.py -a (1/2)
 
 # 1 - Run clicker
 # 2 - Creates a session
@@ -109,4 +102,4 @@ You can also use arguments for quick start, for example:
 ### Contacts
 
 For support or questions, contact me on Telegram: 
-[![Static Badge](https://img.shields.io/badge/telegram-bot_author-link?style=for-the-badge&logo=telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/unknxwnplxya)
+[![Static Badge](https://img.shields.io/badge/telegram-bot_author-link?style=for-the-badge&logo=telegram&logoColor=white&logoSize=auto&color=blue)](https://t.me/airdropfactoryv)
