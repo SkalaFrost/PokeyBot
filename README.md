@@ -1,4 +1,5 @@
-
+#### Support our community by clicking on the referral link below. Your contribution helps us continue improving and developing our bot. Thank you!
+[Click here](https://t.me/pokequest_bot/app?startapp=1BrRovf5vB)
 ## Recommendation before use
 
 # 🔥🔥 PYTHON version must be 3.10 🔥🔥
