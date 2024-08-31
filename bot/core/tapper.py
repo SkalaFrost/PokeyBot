@@ -138,28 +138,16 @@ class Tapper:
                 except (Unauthorized, UserDeactivated, AuthKeyUnregistered):
                     raise InvalidSession(self.session_name)
 
-            while True:
-                try:
-                    if self.peer is None:
-                        self.peer = await self.tg_client.resolve_peer('pokequest_bot')
-                    break
-                except FloodWait as fl:
-                    fls = fl.value
-
-                    logger.warning(f"<light-yellow>{self.session_name}</light-yellow> | FloodWait {fl}")
-                    logger.info(f"<light-yellow>{self.session_name}</light-yellow> | Sleep {fls}s")
-
-                    await asyncio.sleep(fls + 3)
-
             if settings.REF_ID == '':
                 self.start_param = '1BrRovf5vB'
             else:
                 self.start_param = settings.REF_ID
 
-            InputBotApp = types.InputBotAppShortName(bot_id=self.peer, short_name="app")
+            peer = await self.tg_client.resolve_peer('pokequest_bot')
+            InputBotApp = types.InputBotAppShortName(bot_id=peer, short_name="app")
 
             web_view = await self.tg_client.invoke(RequestAppWebView(
-                peer=self.peer,
+                peer=peer,
                 app=InputBotApp,
                 platform='android',
                 write_allowed=True,
@@ -366,9 +354,9 @@ class Tapper:
             logger.error(f"<light-yellow>{self.session_name}</light-yellow> | Proxy: {proxy} | Error: {error}")
 
     async def run(self, proxy: str | None) -> None:
-
+        access_token_created_time = 0
         access_token = None
-        
+        token_live_time = random.randint(3500, 3600)
         proxy_conn = ProxyConnector().from_url(proxy) if proxy else None
 
         http_client = CloudflareScraper(headers=headers, connector=proxy_conn)
@@ -380,12 +368,15 @@ class Tapper:
 
         while True:
             try:
-                init_data = await self.get_tg_web_data(proxy=proxy)
-                access_token = await self.login(http_client=http_client, init_data=init_data)
+                if time() - access_token_created_time >= token_live_time or access_token == "":
+                    self.info("Update auth token...")
+                    access_token_created_time = time()
+                    init_data = await self.get_tg_web_data(proxy=proxy)
+                    access_token = await self.login(http_client=http_client, init_data=init_data)
 
                 if access_token:
                     http_client.headers["Authorization"] = f"Bearer {access_token}"
-    
+        
                     # Get user info
                     user_info = await self.user_info(http_client=http_client)
 
@@ -414,7 +405,7 @@ class Tapper:
                                 self.success(f"{task_name}: Succeeded!")
 
                             else:
-                                self.error(f"{task_name}: Cannot process or Completed")
+                                self.info(f"{task_name}: Cannot process or Completed")
                             await asyncio.sleep(delay=2)
                     
                     # Do partner task
